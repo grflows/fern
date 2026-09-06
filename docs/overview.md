@@ -1,18 +1,23 @@
-# overview
+# Overview
 Fern is a simple language that transpiles into js.
 
-## importing 
-
+## Importing
+```
 use math
 use threejs
 use custom-style.css as st // button.style = st.gradient // just copies from the style file
 use elements-snippets.html as sn // button.innerhtml = sn.flashy-button // just coppies the scope from html
+```
 
-## vars
+## Vars
+```
 int x 
 int y = 9
 str name
-### basic types
+```
+
+### Basic Types
+```
 bool
 int uint
 float
@@ -21,7 +26,10 @@ null // null type
 err // error is a type
 fn // function is a callable type
 obj // object type, basically js const but for DOM elements
-### type modifications
+```
+
+### Type Modifications
+```
 const // make it constant
 temp // make it single use
 secret // encrypted only when read
@@ -30,21 +38,27 @@ local // for the current module use only
 owned .. <foo(), bar()> // only allowed to be read by pre-defined functions
 shared // safe to share between threads and async calls
 opt // can return type or null or err
+```
 
-##### mods stacking
-mod's order is up to you, but owned must follow it's grammar.
+#### Mods Stacking
+Mod's order is up to you, but owned must follow it's grammar.
+```
 pub secret int key // order mods as you like
 owned opt bool flag <foo()> // owned's <args> must always be at the end.
+```
 
-### type crafting
-#### dynamic types
-for when you're not sure whither the return type is a or b
-use dtype to create a simple dynamic type on the fly
+### Type Crafting
+#### Dynamic Types
+For when you're not sure whither the return type is a or b.  
+Use `dtype` to create a simple dynamic type on the fly.
+```
 dtype <str| int| err> result // for creating complex types
 secret dtype <int| str> result // outside mods apply to all inner types
 dtype <opt int| temp str> result // you can use mods on the primitive types within dtype
+```
 
-use typedef <> to create a reusable dtype
+Use `typedef <>` to create a reusable dtype.
+```
 typedef dtype <> apiR
   opt str
   temp secret int
@@ -52,14 +66,19 @@ typedef dtype <> apiR
 end
 
 apiR weatherResult
-#### structs
+```
+
+#### Structs
+```
 struct point2d // struct like any other lang
   int x
   int y
 end
 point2d playerPosition
+```
 
-#### enums
+#### Enums
+```
 // type-less enums are always ints and start from 0, you can assign different values to them
 enum serverr
   ok
@@ -79,30 +98,36 @@ enum <str> color
 end
 
 btn.style.color = color::white
+```
 
-
-## functions 
-### typical function
+## Functions
+### Typical Function
+```
 fn foo(int bar) -> int
   // do something
   return bar2
 end
+```
 
-### simple function
+### Simple Function
+```
 fn foo()
   // do something
 end
+```
 
-### lambda functions
+### Lambda Functions
+```
 int x(y, z) -> (y + z * 10) / 2 // these are always a single type functions
 bool j(n, y) -> n && t 
 str mix(name1, name2) -> name1[0] + name2[0] + name1[:0]
 fn btn(arg) -> foo(arg) bar(arg) // fn is a callable type. This can only call functions, never returns a thing.
+```
 
-## control flow 
-### if else 
-#### simple if else
-
+## Control Flow
+### If Else
+#### Simple If Else
+```
 if x == 0
   // do something
 else
@@ -117,13 +142,18 @@ else if y == 1
 else 
   // do something
 end
-#### single liner aka ternary ops
+```
+
+#### Single Liner aka Ternary Ops
+```
 int x 
 x(name == "Tim") = 22 else 19
 str group(age < 18) = "child" else "adult"
 int secret(encrypt_flag) = hash(id) else id // you can call functions in conditional assignments
+```
 
-#### switch statements
+#### Switch Statements
+```
 str msg
 switch arch
   case "arm32"
@@ -133,9 +163,11 @@ switch arch
   case other // the other keyword is the default fallback
     msg = "unknow architecture"
 end
+```
 
-#### loops
-##### for loop
+### Loops
+#### For Loop
+```
 int[] list = \[1 .. 10]
 for i in list
   // do something
@@ -145,8 +177,10 @@ end
 for i in \[1 .. 100]
   // do something
 end
+```
 
-##### while loop
+#### While Loop
+```
 // simple while
 while flag 
   // do something
@@ -156,13 +190,13 @@ end
 while i(i < 10) = i+2 // while checks for the internal condition
   // do something
 end
+```
 
+## Unique Features
 
-
-## unique features
-
-### tiny features
+### Tiny Features
 #### DOM elements mapping
+```
 map plybtn to objwithId('player') // simply map to DOM elements
 
 map // batch map
@@ -170,24 +204,35 @@ map // batch map
   prvbtn objwithId('previous')
   pusbtn objwithId('pause')
 end
+```
 
-#### string formatting
+#### String formatting
+```
 str greet = f"hello {userName}" // python style formatting
+```
 
-#### eval 
+#### Eval
+```
 eval r of fetch(url)
   ? json >> response_parse(r) ? err >> parse_error(err) // if fn returns err, you must handle it in every call
   ? err >> fetch_error(err)
+```
 
-### raw js 
+### Raw JS
+```
 // simple raw
 raw
   // write your raw js code here
 end
+```
 
-### debug annotations
+### Debug annotations
+```
 ? val, read, call, trace, mut, type
+```
 
-### compile-time directives aka less ugly macros
+### Compile-time directives aka less ugly macros
+```
 #unroll (unrolls a loops and switches)
 #defer (like odin's)
+```
