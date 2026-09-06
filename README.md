@@ -1,4 +1,4 @@
-# fern 🌿
+# fern 🌿 (placeholder name)
 A tiny lua-like language transpiled to JavaScript using python.
 
 ## TODO 
