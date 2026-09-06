@@ -1,0 +1,14 @@
+enum servererr
+  ok
+  connectionError
+  timeOut
+  wrongResponse
+  unexpected
+end
+
+enum <str> color
+  white = "#ffffff"
+  black = "#000000"
+end
+
+

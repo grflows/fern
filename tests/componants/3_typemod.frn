@@ -1,0 +1,9 @@
+const int x
+temp str token
+secret int key
+pub bool isRunning
+local int y 
+owned int finalBuffer <render()>
+owned int buffer <foo(), bar()>
+shared int input
+opt str fetch_response

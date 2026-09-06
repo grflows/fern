@@ -1,0 +1,5 @@
+fn foo(int bar) -> str
+  str eggs
+  // do something
+  return eggs
+end

@@ -1,0 +1,8 @@
+switch arch
+  case "arm32"
+    msg = "32 bit"
+  case "amd64", "wasm64p32", "arm64"
+    msg = "64 bit"
+  case other
+    msg = "unknow architecture"
+end

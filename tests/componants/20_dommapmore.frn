@@ -1,0 +1,5 @@
+map
+  nxtbtn objwithId('next')
+  prvbtn objwithId('previous')
+  pusbtn objwithId('pause')
+end

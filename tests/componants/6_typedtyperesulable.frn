@@ -1,0 +1,8 @@
+
+typedef dtype <> apiR
+  opt str
+  temp secret int
+  err
+end
+
+apiR userData

@@ -1,0 +1,15 @@
+struct point2d 
+  int x
+  int y
+end
+
+point2d playerPosition
+
+struct user
+  str name
+  uint age
+  uint id
+  bool subscribed
+end
+
+user james

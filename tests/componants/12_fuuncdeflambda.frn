@@ -1,0 +1,4 @@
+int x(y, z) -> (y + z * 10) / 2
+bool j(n, y) -> n && t 
+str mix(name1, name2) -> name1[0] + name2[0] + name1[:0]
+fn btn(arg) -> foo(arg) bar(arg)

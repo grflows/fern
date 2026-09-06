@@ -1,0 +1,3 @@
+x(name == "Tim") = 22 else 19
+str group(age < 18) = "child" else "adult"
+int secret(encrypt_flag) = hash(id) else id

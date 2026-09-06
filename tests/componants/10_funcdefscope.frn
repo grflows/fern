@@ -1,0 +1,8 @@
+fn foo()
+  int x
+  str name
+  struct use
+    str key
+    bool deleted
+  end
+end

@@ -1,0 +1,2 @@
+dtype <str| int| str> result
+dtype <opt int| temp str> result2

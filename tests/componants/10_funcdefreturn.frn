@@ -1,0 +1,5 @@
+fn foo() -> int
+  int x
+  // do something
+  return x
+end

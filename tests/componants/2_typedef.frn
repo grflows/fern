@@ -1,0 +1,8 @@
+int x
+float precent
+str name
+bool flag
+auto input
+err error
+fn sequence()
+obj btn

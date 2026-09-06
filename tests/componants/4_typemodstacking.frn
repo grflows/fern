@@ -1,0 +1,7 @@
+const secret int x
+local temp str token
+shared secret int key
+pub secret temp bool isRunning
+local opt int y 
+
+owned opt bool flag <foo()>

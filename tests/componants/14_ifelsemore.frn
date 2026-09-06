@@ -1,0 +1,7 @@
+if y == 0
+  // do something
+else if y == 1 
+  // do something
+else 
+  // do something
+end
