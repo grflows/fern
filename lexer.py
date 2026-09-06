@@ -39,11 +39,10 @@ def lex(file_name):
                 pass
             elif fchar == "/":
                 continue
+            # ===================== words ==========================
             elif 'a' <= fchar <= 'z':
                 line = line.split(" ")
                 fword = line[0]
-                if fword == ""
-
                 pass
             # invalids
             elif '0' <= fchar <= '9':
