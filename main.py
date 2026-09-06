@@ -10,7 +10,7 @@ def main():
     file_name = sys.argv[1]
     if os.path.exists(file_name):
         ext = os.path.splitext(file_name)[1]
-        if ext == ".lm":
+        if ext == ".frn":
             tokens = lexer.lex(file_name)
             print(tokens)
         else:
